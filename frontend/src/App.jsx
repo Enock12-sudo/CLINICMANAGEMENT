@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import "./App.css";
 
 async function request(url, options) {
   const response = await fetch(url, options);
@@ -44,7 +45,7 @@ function OfficeRegistrationPage({ onSaved }) {
   }
 
   return (
-    <section>
+    <section className="registration-page">
       <h2>Register an office</h2>
       <form onSubmit={handleSave}>
         <p>
@@ -208,7 +209,7 @@ export default function App() {
   }
 
   return (
-    <main>
+    <main className={page === "register" ? "registration-view" : undefined}>
       <h1>Office management</h1>
       <nav aria-label="Office pages">
         <a href="#/register">Register an office</a>
